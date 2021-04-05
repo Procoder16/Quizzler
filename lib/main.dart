@@ -7,6 +7,16 @@ class Quizzler extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.grey[800],
+          centerTitle: true,
+          title: Text(
+            'QUIZZLER',
+            style: TextStyle(
+              fontSize: 25.0,
+            ),
+          ),
+        ),
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
           child: Padding(

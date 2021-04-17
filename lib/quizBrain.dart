@@ -1,6 +1,7 @@
 import 'questions.dart';
 
 class QuizBrain {
+  int _questionNumber = 0;
   List<Questions> _questionBank = [
     Questions(
         'The first man on the Everest\'s peak was Neil Armstrong.', false),
@@ -26,11 +27,17 @@ class QuizBrain {
     Questions('Your \'radius\' bone is in your leg.', false),
   ];
 
-  String getQuestionText(int questionNumber) {
-    return _questionBank[questionNumber].questionText;
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
   }
 
-  bool getQuestionAnswer(int questionNumber) {
-    return _questionBank[questionNumber].questionAnswer;
+  String getQuestionText() {
+    return _questionBank[_questionNumber].questionText;
+  }
+
+  bool getQuestionAnswer() {
+    return _questionBank[_questionNumber].questionAnswer;
   }
 }
